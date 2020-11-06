@@ -12,9 +12,8 @@ public class CadastroUser {
 		this.driver = driver;
 	}
 
-	
 	public void preencheCadastro() {
-		
+
 		WebElement nome = driver.findElement(By.xpath(".//div[@id='root']/div/div[2]/div/div/form/fieldset/input"));
 		nome.sendKeys("Brendo");
 		
@@ -26,20 +25,14 @@ public class CadastroUser {
 		
 		WebElement senha2 = driver.findElement(By.xpath(".//div[@id='root']/div/div[2]/div/div/form/fieldset/input[4]"));
 		senha2.sendKeys("123456");
-		
-		//campo empresa checkbox
-		//WebElement checkemp = driver.findElement(By.xpath(".//div[@id='root']/div/div[2]/div/div/form/fieldset/div[9]/label/span"));
-		//checkemp.click();
-		
+
 		WebElement envio =driver.findElement(By.id("submit"));
 		envio.click();
 
-		
 	}
 	
 	public String validamsg(){
 		return driver.findElement(By.className("notification-container-bottom-center")).getText();
 	}
-	
-	
+
 }
