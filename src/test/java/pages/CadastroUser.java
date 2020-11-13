@@ -18,7 +18,7 @@ public class CadastroUser {
 		nome.sendKeys("Brendo");
 		
 		WebElement email = driver.findElement(By.xpath(".//div[@id='root']/div/div[2]/div/div/form/fieldset/input[2]"));
-		email.sendKeys("brendo2@gmail.com");
+		email.sendKeys("brendo3@gmail.com");
 		
 		WebElement senha1 = driver.findElement(By.xpath(".//div[@id='root']/div/div[2]/div/div/form/fieldset/input[3]"));
 		senha1.sendKeys("123456");
@@ -26,7 +26,7 @@ public class CadastroUser {
 		WebElement senha2 = driver.findElement(By.xpath(".//div[@id='root']/div/div[2]/div/div/form/fieldset/input[4]"));
 		senha2.sendKeys("123456");
 
-		WebElement envio =driver.findElement(By.id("submit"));
+		WebElement envio = driver.findElement(By.id("submit"));
 		envio.click();
 
 	}

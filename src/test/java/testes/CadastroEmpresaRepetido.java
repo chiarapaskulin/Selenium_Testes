@@ -1,12 +1,14 @@
 package testes;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pages.CadastroEmp;
 
-public class Navegador_CadastroEmpresa {
+public class CadastroEmpresaRepetido {
 
     static WebDriver driver;
     static CadastroEmp cadastroEmp;
@@ -23,12 +25,14 @@ public class Navegador_CadastroEmpresa {
 
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
+        //Fecha a aba
         driver.close();
     }
 
     @Test
-    public void test() {
+    public void cadastroEmpresa() {
         cadastroEmp.preencheCadastro();
+        assertEquals("Erro Cadastro\n" + "Erro Inesperado.", cadastroEmp.validamsg());
     }
 
 }
