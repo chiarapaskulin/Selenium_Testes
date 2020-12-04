@@ -35,7 +35,12 @@ public class CadastroEmp {
 
     }
 
-    public String validamsg(){
+    public String validamsg() throws InterruptedException {
+        try {
+            new Thread().sleep(3000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
         return driver.findElement(By.className("notification-container-bottom-center")).getText();
     }
 

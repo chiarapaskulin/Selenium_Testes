@@ -31,9 +31,14 @@ public class CadastroUser {
 
 	}
 	
-	public String validamsg(){
-		//return driver.findElement(By.className("notification-container-bottom-center")).getText(); - a partir da className
-		return driver.findElement(By.xpath(".//div[@id='root']/div/div[1]/div[7]")).getText(); // - a partir do xPath
+	public String validamsg() throws InterruptedException {
+		try {
+			new Thread().sleep(3000);
+		}catch (InterruptedException e){
+			e.printStackTrace();
+		}
+		return driver.findElement(By.className("notification-container-bottom-center")).getText(); //- a partir da className
+		//return driver.findElement(By.xpath(".//div[@id='root']/div/div[1]/div[7]")).getText(); // - a partir do xPath
 	}
 
 }

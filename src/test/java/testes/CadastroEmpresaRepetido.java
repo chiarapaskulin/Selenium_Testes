@@ -19,7 +19,7 @@ public class CadastroEmpresaRepetido {
         System.setProperty("webdriver.gecko.driver", "C:/Users/I509187/OneDrive - SAP SE/Desktop/PUCRS 2020-2/AGES/Selenium_Testes/drivers/geckodriver.exe");
         driver = new FirefoxDriver();
         //Endpoint onde o driver deve iniciar
-        driver.get("http://localhost:5000/registre-se");
+        driver.get("http://localhost:3000/registre-se");
         cadastroEmp = new CadastroEmp(driver);
     }
 
@@ -32,7 +32,11 @@ public class CadastroEmpresaRepetido {
     @Test
     public void cadastroEmpresa() {
         cadastroEmp.preencheCadastro();
-        assertEquals("Erro Cadastro\n" + "Erro Inesperado.", cadastroEmp.validamsg());
+        try {
+            assertEquals("Erro Cadastro\n" + "Erro Inesperado.", cadastroEmp.validamsg());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

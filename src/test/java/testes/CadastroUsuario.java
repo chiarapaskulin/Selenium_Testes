@@ -19,7 +19,7 @@ public class CadastroUsuario {
 		System.setProperty("webdriver.gecko.driver", "C:/Users/I509187/OneDrive - SAP SE/Desktop/PUCRS 2020-2/AGES/Selenium_Testes/drivers/geckodriver.exe");
 	    driver = new FirefoxDriver();
 		//Endpoint onde o driver deve iniciar
-	    driver.get("http://localhost:5000/registre-se");
+	    driver.get("http://localhost:3000/registre-se");
 	    cadastroUser = new CadastroUser(driver);
 	}
 
@@ -32,7 +32,11 @@ public class CadastroUsuario {
 	@Test
 	public void cadastroUsuario() {
 		cadastroUser.preencheCadastro();
-		assertEquals("Cadastro realizado com sucesso!", cadastroUser.validamsg());
+		try {
+			assertEquals("Cadastro realizado com sucesso!", cadastroUser.validamsg());
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
