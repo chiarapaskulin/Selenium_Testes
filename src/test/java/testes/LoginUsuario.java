@@ -26,7 +26,7 @@ public class LoginUsuario{
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 		//Fecha a aba
-		//driver.close();
+		driver.close();
 	}
 
 	@Test
